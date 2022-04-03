@@ -1,12 +1,26 @@
 body{
-    background-color: #EEEEEE;
+    background-color: #ffffff;
 }
 body nav{
     background-color: white;
+    box-shadow: 3px 3px 30px rgb(185, 185, 185);
 }
-/* .home{
-    background-color: #EEEEEE;
-} */
 #H1_text{
-
+    color: #FF8303;
+}
+#form_login{
+    box-shadow: 3px 3px 30px rgb(196, 196, 196);
+}
+#form_login img{
+    
+}
+#btn_Login{
+    background-color: #FF8303;
+}
+#id_checkBox{
+    border-color: black;
+}
+#id_checkBox:checked{
+    background-color: #FF8303;
+    border-color: black;
 }

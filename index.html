@@ -11,10 +11,10 @@
 </head>
 <body>
     <!---Create navbar--->
-    <nav class="navbar navbar-expand-lg bg-white ">
+    <nav class="navbar navbar-expand-lg bg-white">
         <div class="container">
             <!---Logo navbar-->
-            <a href="#" class="navbar-brandfw-bold" id="H1_text">Contact List</a>
+            <a href="#" class="navbar-brand fw-bold" id="H1_text">Contact List</a>
             <!----Button menu--->
             <button 
                 id="menuB"
@@ -37,9 +37,32 @@
         </div>
     </nav>
     <!-----header Text---->
-    <div class="">
-        
-    </div>
+    <section class="b-light ">
+        <div class="container">
+            <div class="d-flex mt-5 text-center" id="form_login">
+                <div class="border border-light border-2">
+                    <form>
+                        <div class="mb-3">
+                          <label for="id_email" class="form-label">Email address</label>
+                          <input type="email" class="form" id="id_email">
+                        </div>
+                        <div class="mb-3">
+                          <label for="id_password" class="form-label">Password</label>
+                          <input type="password" class="form" id="id_password">
+                        </div>
+                        <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="id_checkBox">
+                          <label class="form-check-label" for="id_checkBox">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn px-5" id="btn_Login">Login</button>
+                    </form>
+                </div>
+                <div class="w-25">
+                    <img src="assets/img/Loginpexel.jpg" class="img-thumbnail" alt="image Login">
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
