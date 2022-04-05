@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="assets/css/Normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2">
     <title>Contact List</title>
 </head>
 <body>
     <!---Create navbar--->
-    <nav class="navbar navbar-expand-lg bg-white">
+    <nav class="navbar navbar-expand-lg bg-white" id="NAVBAR_HOME_PAGE">
         <div class="container">
             <!---Logo navbar-->
-            <a href="#" class="navbar-brand fw-bold" id="H1_text">Contact List</a>
+            <a href="#">
+                <img src="assets/img/Contact_logo copy.png" alt="image de logo" id="Logo_page">
+            </a>
             <!----Button menu--->
             <button 
                 id="menuB"
@@ -30,39 +33,26 @@
                 <ul class="navbar-nav ms-auto">
                     <!----navb Button Login-->
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Login</a>
+                        <a href="Login.html" class="nav-link md-border-sm" id="login_text">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-----header Text---->
-    <section class="b-light ">
-        <div class="container">
-            <div class="d-flex mt-5 text-center" id="form_login">
-                <div class="border border-light border-2">
-                    <form>
-                        <div class="mb-3">
-                          <label for="id_email" class="form-label">Email address</label>
-                          <input type="email" class="form" id="id_email">
-                        </div>
-                        <div class="mb-3">
-                          <label for="id_password" class="form-label">Password</label>
-                          <input type="password" class="form" id="id_password">
-                        </div>
-                        <div class="mb-3 form-check">
-                          <input type="checkbox" class="form-check-input" id="id_checkBox">
-                          <label class="form-check-label" for="id_checkBox">Check me out</label>
-                        </div>
-                        <button type="submit" class="btn px-5" id="btn_Login">Login</button>
-                    </form>
-                </div>
-                <div class="w-25">
-                    <img src="assets/img/Loginpexel.jpg" class="img-thumbnail" alt="image Login">
-                </div>
+    <header>
+        <div class="container mt-5 d-flex">
+            <div>
+                <h1>
+                    <span class="fw-bold">Hello!</span>
+                    sign up to start creating your contacts list.Already have an account? Login here.
+                </h1>
+            </div>
+            <div>
+                <img src="assets/img/picture_home_page.svg" class="w-100 ps-5 md-display-none" alt="picture session">
             </div>
         </div>
-    </section>
+    </header>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

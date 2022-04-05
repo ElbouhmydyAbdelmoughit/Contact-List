@@ -1,26 +1,37 @@
-body{
-    background-color: #ffffff;
-}
-body nav{
-    background-color: white;
-    box-shadow: 3px 3px 30px rgb(185, 185, 185);
-}
-#H1_text{
-    color: #FF8303;
-}
-#form_login{
-    box-shadow: 3px 3px 30px rgb(196, 196, 196);
-}
-#form_login img{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     
 }
-#btn_Login{
+#NAVBAR_HOME_PAGE{
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: 3px 3px 30px rgb(214, 214, 214);
+    height: 80px !important;
+}
+#Logo_page{
+    width: 80px;
+    height: 80px;
+}
+h1{
+    width: 500px;
+}
+span{
+    color: #FF8303;
+    font-family: sans-serif;
+    display: block;
+}
+#login_text{
+    color: black;
+    border: 2px solid #FF8303;
+    padding: 3px 20px;
+    border-radius: 5px;
+}
+#login_text:hover{
+    font-weight: bold;
+    color: #000000;
     background-color: #FF8303;
 }
-#id_checkBox{
-    border-color: black;
-}
-#id_checkBox:checked{
-    background-color: #FF8303;
-    border-color: black;
+header{
+    margin-top: 100px;
 }
