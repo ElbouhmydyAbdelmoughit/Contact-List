@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 #NAVBAR_HOME_PAGE{
     background-color: rgb(255, 255, 255) !important;
@@ -10,16 +9,19 @@
     height: 80px !important;
 }
 #Logo_page{
-    width: 80px;
+    width: 90px;
     height: 80px;
 }
 h1{
     width: 500px;
+    font-style: italic;
 }
 span{
     color: #FF8303;
     font-family: sans-serif;
     display: block;
+    font-weight: bold;
+    font-style: normal !important;
 }
 #login_text{
     color: black;
@@ -34,4 +36,17 @@ span{
 }
 header{
     margin-top: 100px;
+}
+#button_login{
+    padding: 5px 30px;
+    border-radius: 5px;
+    box-shadow: inset 3px 3px 20px #FF8303,3px 3px 20px rgba(255, 131, 3, 1);
+    background-color: #FF8303;
+}
+#button_login:hover{
+    border: 2px solid #FF8303;
+    color: #000000;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: none;
 }
