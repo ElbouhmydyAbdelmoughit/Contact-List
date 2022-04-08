@@ -44,8 +44,8 @@
     </nav>
     <!------Header------>
     <header id="header_login_page">
-        <div class="container w-50 pb-3">
-            <div class="d-flex w-100 d-flex justify-content-center align-item-center shadow pb-5" id="content">
+        <div class="container w-50 pb-2">
+            <div class="d-flex w-100 d-flex justify-content-center align-item-center shadow pb-4" id="content">
                 <div class="form w-75 pt-3">
                     <!-----Form login------->
                     <h2 class=" border-start border-3 ps-3 mb-5 rounded-1 fw-bold" id="H2_page_login">Login</h2>
@@ -62,7 +62,21 @@
                             <input type="checkbox" class="form-check-input" id="CheckBox">
                             <label class="form-check-label" for="CheckBox">Check me out</label>
                         </div>
-                        <button type="submit" class="btn" id="button_login_page_login">Login</button>
+                        <button type="submit" class="btn mb-3" id="button_login_page_login">Login</button>
+                        <div class="d-flex justify-content-end">
+                            <label class="fst-italic">
+                                Create account
+                                <!----Button Modal---->
+                                <a href="#" 
+                                    type="button" 
+                                    class="btn text-primary pt-0 ps-0" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#exampleModal">Sign up
+                                </a>
+                            </label>
+                                <!---Call signup page--->
+                            <?php include "signup.php" ?>
+                        </div>
                     </form>
                 </div>
                 <!-- <div class="image_form w-25 bg-warning">

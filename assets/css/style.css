@@ -94,3 +94,22 @@ header{
 #H2_page_login{
     border-color: #FF8303 !important;
 }
+#btn_signup{
+    border-radius: 5px !important;
+    box-shadow: inset 1px 1px 10px #FF8303,1px 1px 10px rgba(255, 131, 3, 1) !important;
+    background-color: #FF8303 !important;
+}
+#btn_close{
+    background-color: #000000;
+    color: #FFFFFF;
+    box-shadow: 1px 1px 10px black;
+}
+#btn_signup:hover{
+    background-color: #000000 !important;
+    color: #FF8303;
+    box-shadow: 1px 1px 10px black !important;
+}
+#btn_close:hover{
+    background-color: red;
+    color: black;
+}
