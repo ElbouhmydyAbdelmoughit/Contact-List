@@ -23,7 +23,10 @@
                     class="navbar-toggler" 
                     type="button" 
                     data-bs-toggle="collapse" 
-                    data-bs-target="#navmenu" 
+                    data-bs-target="#navmenu"
+                    aria-controls="navmenu" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation" 
                     style="background-color: #FF8303;">
                     <!-------icon menu--->
                 <span class="navbar-toggler-icon"></span>
@@ -33,7 +36,7 @@
                 <ul class="navbar-nav ms-auto">
                     <!----navb Button Login-->
                     <li class="nav-item">
-                        <a href="Login.php" class="nav-link" id="login_text">Login</a>
+                        <a href="Login.php" class="nav-link col-3" id="login_text">Login</a>
                     </li>
                 </ul>
             </div>
@@ -51,15 +54,15 @@
                     </h1>
                 </div>
                 <!--------image header------->
-                <img src="assets/img/picture_home_page.svg" class="img-fluid w-50 d-xm-none" alt="picture session">
+                <img src="assets/img/picture_home_page.svg" class="img-fluid w-50" alt="picture session">
             </div>
             <a href="Login.php">
-                <button class="btn my-4" id="button_login">Login</button>
+                <button class="btn my-4" id="button_login" class="w-sm-25">Login</button>
             </a>
         </div>
     </header>
 
-
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

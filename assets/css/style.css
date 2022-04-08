@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 #NAVBAR_HOME_PAGE{
+    padding: 0 !important;
     background-color: rgb(255, 255, 255) !important;
     box-shadow: 3px 3px 30px rgb(214, 214, 214);
-    height: 80px !important;
+     min-height: 80px !important; 
 }
 #Logo_page{
     width: 90px;
@@ -28,6 +29,7 @@ span{
     border: 2px solid #FF8303;
     padding: 3px 20px;
     border-radius: 5px;
+    width: 100px;
 }
 #login_text:hover{
     font-weight: bold;
@@ -49,4 +51,46 @@ header{
     font-weight: bold;
     background-color: white;
     box-shadow: none;
+}
+#Home_text{
+    color: black;
+    border: 2px solid #FF8303;
+    padding: 3px 20px;
+    border-radius: 5px;
+    width: 100px;
+}
+#Home_text:hover{
+    font-weight: bold;
+    color: #000000;
+    background-color: #FF8303;
+}
+#header_login_page{
+    margin-top: 50px;
+}
+#image_login{
+    margin-right: 0px !important;
+}
+#content{
+    border-radius: 15px;
+}
+#button_login_page_login{
+    padding: 5px 30px;
+    border-radius: 5px;
+    box-shadow: inset 3px 3px 20px #FF8303,3px 3px 20px rgba(255, 131, 3, 1);
+    background-color: #FF8303;
+}
+#button_login_page_login:hover{
+    color: #FF8303;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 3px 3px 20px rgb(0, 0, 0);
+}
+#CheckBox{
+    border-color: #FF8303;
+}
+#CheckBox:checked{
+    background-color: #000000;
+    border-color: #000000;
+}
+#H2_page_login{
+    border-color: #FF8303 !important;
 }
