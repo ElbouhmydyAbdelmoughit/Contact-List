@@ -36,32 +36,17 @@
                 <ul class="navbar-nav ms-auto">
                     <!----navb Button Login-->
                     <li class="nav-item">
-                        <a href="Login.php" class="nav-link col-3" id="login_text">Login</a>
+                        <a href="#" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="btn"> logout</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!------Header------>
-    <header>
-        <div class="container">
-            <div class="d-lg-flex">
-                <!-----Text header----->
-                <div>
-                    <h1 class="text-wrap">
-                        <span>Hello!</span>
-                        sign up to start creating your contacts list.Already have an account? Login here.
-                    </h1>
-                </div>
-                <!--------image header------->
-                <img src="assets/img/picture_home_page.svg" class="img-fluid w-50" alt="picture session">
-            </div>
-            <a href="Login.php">
-                <button class="btn my-4" id="button_login" class="w-sm-25">Continue</button>
-            </a>
-        </div>
-    </header>
-
+    <?php include("Add_contact.php")?>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

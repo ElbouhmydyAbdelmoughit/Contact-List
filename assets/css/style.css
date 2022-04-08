@@ -25,6 +25,7 @@ span{
     font-style: normal !important;
 }
 #login_text{
+    text-align: center;
     color: black;
     border: 2px solid #FF8303;
     padding: 3px 20px;
