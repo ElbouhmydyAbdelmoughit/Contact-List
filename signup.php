@@ -1,3 +1,6 @@
+<?php 
+  include "./classes/Classes.php";
+?>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -10,7 +13,7 @@
         <form id="form_login">
             <div class="mb-3">
                 <label for="Username" class="form-label">Username</label>
-                <input type="email" class="form-control" id="Username" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="Username" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="Password" class="form-label">Password</label>

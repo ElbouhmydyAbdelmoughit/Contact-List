@@ -36,10 +36,10 @@
                 <ul class="navbar-nav ms-auto">
                     <!----navb Button Login-->
                     <li class="nav-item">
-                        <a href="#" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
+                        <a href="#" type="button" class="btn" id="btn_contact" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="btn"> logout</a>
+                        <a href="#" class="btn" id="btn_logout"> logout</a>
                     </li>
                 </ul>
             </div>

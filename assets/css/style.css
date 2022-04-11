@@ -7,7 +7,7 @@
     padding: 0 !important;
     background-color: rgb(255, 255, 255) !important;
     box-shadow: 3px 3px 30px rgb(214, 214, 214);
-     min-height: 80px !important; 
+    min-height: 80px !important; 
 }
 #Logo_page{
     width: 90px;
@@ -31,6 +31,7 @@ span{
     padding: 3px 20px;
     border-radius: 5px;
     width: 100px;
+    letter-spacing: 2px;
 }
 #login_text:hover{
     font-weight: bold;
@@ -45,6 +46,7 @@ header{
     border-radius: 5px;
     box-shadow: inset 3px 3px 20px #FF8303,3px 3px 20px rgba(255, 131, 3, 1);
     background-color: #FF8303;
+    letter-spacing: 2px;
 }
 #button_login:hover{
     border: 2px solid #FF8303;
@@ -52,6 +54,7 @@ header{
     font-weight: bold;
     background-color: white;
     box-shadow: none;
+    letter-spacing: 2px;
 }
 #Home_text{
     color: black;
@@ -59,6 +62,7 @@ header{
     padding: 3px 20px;
     border-radius: 5px;
     width: 100px;
+    letter-spacing: 2px;
 }
 #Home_text:hover{
     font-weight: bold;
@@ -79,6 +83,7 @@ header{
     border-radius: 5px;
     box-shadow: inset 3px 3px 20px #FF8303,3px 3px 20px rgba(255, 131, 3, 1);
     background-color: #FF8303;
+    letter-spacing: 2px;
 }
 #button_login_page_login:hover{
     color: #FF8303;
@@ -99,11 +104,13 @@ header{
     border-radius: 5px !important;
     box-shadow: inset 1px 1px 10px #FF8303,1px 1px 10px rgba(255, 131, 3, 1) !important;
     background-color: #FF8303 !important;
+    letter-spacing: 2px;
 }
 #btn_close{
     background-color: #000000;
     color: #FFFFFF;
     box-shadow: 1px 1px 10px black;
+    letter-spacing: 2px;
 }
 #btn_signup:hover{
     background-color: #000000 !important;
@@ -111,6 +118,44 @@ header{
     box-shadow: 1px 1px 10px black !important;
 }
 #btn_close:hover{
+    background-color: red;
+    color: black;
+}
+#btn_logout{
+    color: #000000 !important;
+    letter-spacing: 2px;
+}
+
+#btn_logout:hover{
+    background: #FF8303;
+}
+#btn_contact{
+    color: #000000 !important;
+    letter-spacing: 2px;
+}
+#btn_contact:hover{
+    background: #FF8303 !important;
+}
+#btn_create{
+    border: none;
+    border-radius: 5px !important;
+    box-shadow: inset 1px 1px 10px #FF8303,1px 1px 10px rgba(255, 131, 3, 1) !important;
+    background-color: #FF8303 !important;
+    letter-spacing: 2px;
+}
+#btn_create:hover{
+    background-color: #000000 !important;
+    color: #FF8303;
+    box-shadow: 1px 1px 10px black !important;
+}
+#btn_close_contact_page{
+    background-color: #000000;
+    color: #FFFFFF;
+    box-shadow: 1px 1px 10px black;
+    letter-spacing: 2px;
+    border: none;
+}
+#btn_close_contact_page:hover{
     background-color: red;
     color: black;
 }

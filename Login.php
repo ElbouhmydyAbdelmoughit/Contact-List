@@ -51,8 +51,8 @@
                     <h2 class=" border-start border-3 ps-3 mb-5 rounded-1 fw-bold" id="H2_page_login">Login</h2>
                     <form id="form_login">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -79,12 +79,6 @@
                         </div>
                     </form>
                 </div>
-                <!-- <div class="image_form w-25 bg-warning">
-                    <div class="w-75 h-50 bg-danger">
-                        
-                    </div>
-                     <img src="assets/img/Loginpexel.jpg" class="img-fluid h-100" id="image_login" alt="login image"> 
-                </div> -->
             </div>
         </div>
     </header>

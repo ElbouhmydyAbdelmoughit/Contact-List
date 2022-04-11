@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>Contact List</title>
 </head>
 <body>
@@ -44,11 +45,11 @@
     </nav>
     <!------Header------>
     <header>
-        <div class="container">
+        <div class="container animate__animated animate__bounce">
             <div class="d-lg-flex">
                 <!-----Text header----->
                 <div>
-                    <h1 class="text-wrap">
+                    <h1 class="tetx-wrap">
                         <span>Hello!</span>
                         sign up to start creating your contacts list.Already have an account? Login here.
                     </h1>
@@ -57,7 +58,7 @@
                 <img src="assets/img/picture_home_page.svg" class="img-fluid w-50" alt="picture session">
             </div>
             <a href="Login.php">
-                <button class="btn my-4" id="button_login" class="w-sm-25">Continue</button>
+                <button class="btn my-4" id="button_login" class="w-sm-25 btn_continue">Continue</button>
             </a>
         </div>
     </header>

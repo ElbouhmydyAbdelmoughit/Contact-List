@@ -2,15 +2,32 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <h4 class=" border-start border-3 ps-3 rounded-1 fw-bold" id="H2_page_login">Create new account</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <form id="form_login">
+              <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                  <label for="name" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                  <label for="address" class="form-label">Address</label>
+                  <input type="text" class="form-control" id="address" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="text" class="form-control" id="phone" aria-describedby="emailHelp">
+              </div>
+          </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close_contact_page">Close</button>
+        <button type="button" class="btn btn-primary" id="btn_create">Create</button>
       </div>
     </div>
   </div>
