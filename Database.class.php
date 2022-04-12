@@ -1,13 +1,20 @@
 <?php
 class Db{
-    private $user="root";
-    private $password="";
-    public $conn;
-    
-    public function __construct(){
-        $conn = new PDO("host:localhost;dbname=contacts",$this->user,$this->password);
-        if ($conn) {
-            return $conn;
-        }else die(mysqli_error($conn));
+    private static $user="root";
+    private static $password="";
+    private static $dbname="contacts";
+    private static $host= "localhost";
+    private static $connection= NULL;
+        
+    public static function Connect(){
+        try {
+            self::$connection = new PDO("mysql:host=".self::$host.";dbname=".self::$dbname."",self::$user,self::$password);
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+        return self::$connection;
+    }
+    public static function deconnect(){
+        self::$connection =NULL; 
     }
 }
