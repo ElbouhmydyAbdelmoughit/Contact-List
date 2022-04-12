@@ -7,24 +7,24 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="form_login">
+        <form method="POST" action="User.class.php" id="form_login">
             <div class="mb-3">
                 <label for="Username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="Username" aria-describedby="emailHelp">
+                <input type="text" name="username" class="form-control" id="Username" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="Password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="Password">
+                <input type="password" name="password" class="form-control" id="Password">
             </div>
             <div class="mb-3">
                 <label for="Password_verify" class="form-label">Password verify</label>
-                <input type="password" class="form-control" id="Password_verify">
+                <input type="password" name="passwordverify" class="form-control" id="Password_verify">
             </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn" id="btn_close" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn" id="btn_signup">Sign up</button>
+        <button type="button" name="submit" onclick="<?php include 'User.class.php'?>"; class="btn" id="btn_signup">Sign up</button>
       </div>
     </div>
   </div>
