@@ -159,3 +159,12 @@ header{
     background-color: red;
     color: black;
 }
+#logo_animate,#btn_login_animate{
+    animation-delay: 2s;
+}
+#h1_animate,#image_section_animate{
+    animation-delay: 1s;
+}
+#btn_continue_animate{
+    animation-delay: 0.3s;
+}
