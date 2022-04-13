@@ -1,15 +1,19 @@
 <?php
+
+use Contact as GlobalContact;
+
 class Contact {
     public $name;
-    public $email;
+    public $emai;
     public $address;
     public $phone;
 
-    public function __construct($name,$email,$address,$phone)
-    {
-        $this->name=$name;
-        $this->email=$email;
-        $this->address=$address;
-        $this->phone=$phone;
+    public function select(){
+        $db=Db::Connect();
+        $statement = $db->query('SELECT * FROM contact');
+        while ($row = $statement->fetchAll()) {
+            var_dump($row);
+        }
     }
 }
+

@@ -7,14 +7,13 @@
         $name= $_POST['username'];
         $password= $_POST['password'];
         $requete=" SELECT * FROM user WHERE password_user='$password' && username ='$name'";
-        $db = D_base::Connect();
+        $db = Db::Connect();
         $statement= $db->query($requete);
-        $result= $statement->fetchAll();
-        
-        // $count= $statement->rowCount();
-        // if ($count==1) {
-        //     header('location:contact.php');
-        // }
+        $result= $statement->PDO::fetch();
+        $count= $statement->rowCount();
+        if ($count==1) {
+            header('location:contact.php');
+        }
     }
 
   }

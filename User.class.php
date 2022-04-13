@@ -8,9 +8,9 @@ class User{
     public function Insert($submit,$username,$password_user,$passwordverify){
         if(isset($submit)){
             $requete="INSERT INTO user VALUES(NULL,'$password_user','$username')";
-            $db= D_base::Connect();
+            $db= Db::Connect();
             $statement=$db->query($requete);
-            D_base::deconnect();
+            Db::deconnect();
         }
     }
     /*---function delete user----*/

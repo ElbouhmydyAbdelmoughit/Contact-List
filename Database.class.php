@@ -1,5 +1,5 @@
 <?php
-class D_base{
+class Db{
     private static $user="root";
     private static $password="";
     private static $dbname="contacts";
