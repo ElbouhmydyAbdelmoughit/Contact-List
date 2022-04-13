@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="User.class.php" id="form_login">
+        <form method="POST" action="Login.php" id="form_login">
             <div class="mb-3">
                 <label for="Username" class="form-label">Username</label>
                 <input type="text" name="username" class="form-control" id="Username" aria-describedby="emailHelp">
@@ -20,11 +20,12 @@
                 <label for="Password_verify" class="form-label">Password verify</label>
                 <input type="password" name="passwordverify" class="form-control" id="Password_verify">
             </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn" id="btn_close" data-bs-dismiss="modal">Close</button>
+              <input type="submit" name="submit" class="btn" id="btn_signup" value="Sign up">
+            </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn" id="btn_close" data-bs-dismiss="modal">Close</button>
-        <button type="button" name="submit" onclick="<?php include 'User.class.php'?>"; class="btn" id="btn_signup">Sign up</button>
       </div>
     </div>
   </div>

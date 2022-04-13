@@ -5,14 +5,9 @@ class User{
     public $username;
     public $password_user;
 
-    public function insert(){
-        // $username= $_POST['username'];
-        // $password= $_POST['password'];
-        // $passwordverify= $_POST['passwordverify'];
-        // $submit= $_POST['submit'];
-
+    public function Insert($submit,$username,$password_user,$passwordverify){
         if(isset($submit)){
-            $requete='INSERT INTO user VALUES(NULL,"admin","admin")'; 
+            $requete="INSERT INTO user VALUES(NULL,'$password_user','$username')";
             $db= Db::Connect();
             $statement=$db->query($requete);
             Db::deconnect();
@@ -20,4 +15,5 @@ class User{
     }
 }
 
+$insert = new User();
 ?>

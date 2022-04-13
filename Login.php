@@ -1,3 +1,11 @@
+<?php
+  require ('User.class.php');
+  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $insert->Insert($_POST['submit'],$_POST['username'],$_POST['password'],$_POST['passwordverify']);
+  }
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +57,7 @@
                 <div class="form w-75 pt-3">
                     <!-----Form login------->
                     <h2 class=" border-start border-3 ps-3 mb-5 rounded-1 fw-bold" id="H2_page_login">Login</h2>
-                    <form id="form_login">
+                    <form id="form_login" method="POST">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Username</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -75,7 +83,9 @@
                                 </a>
                             </label>
                                 <!---Call signup page--->
-                            <?php include "signup.php" ?>
+                            <?php 
+                                include "signup.php" 
+                            ?>
                         </div>
                     </form>
                 </div>
