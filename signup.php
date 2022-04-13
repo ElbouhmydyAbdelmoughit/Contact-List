@@ -8,6 +8,7 @@
       </div>
       <div class="modal-body">
         <form method="POST" action="Login.php" id="form_login">
+            <input type="hidden" name="id">
             <div class="mb-3">
                 <label for="Username" class="form-label">Username</label>
                 <input type="text" name="username" class="form-control" id="Username" aria-describedby="emailHelp">

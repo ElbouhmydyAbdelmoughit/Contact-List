@@ -1,7 +1,22 @@
 <?php
+// require ('Database.class.php');
   require ('User.class.php');
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $insert->Insert($_POST['submit'],$_POST['username'],$_POST['password'],$_POST['passwordverify']);
+    if (isset($_POST['submit'])) {
+        $name= $_POST['username'];
+        $password= $_POST['password'];
+        $requete=" SELECT * FROM user WHERE password_user='$password' && username ='$name'";
+        $db = D_base::Connect();
+        $statement= $db->query($requete);
+        $result= $statement->fetchAll();
+        
+        // $count= $statement->rowCount();
+        // if ($count==1) {
+        //     header('location:contact.php');
+        // }
+    }
+
   }
   
 ?>
@@ -60,17 +75,17 @@
                     <form id="form_login" method="POST">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="CheckBox">
+                            <input type="checkbox" name="checkbox" class="form-check-input" id="CheckBox">
                             <label class="form-check-label" for="CheckBox">Check me out</label>
                         </div>
-                        <button type="submit" class="btn mb-3" id="button_login_page_login">Login</button>
+                        <button type="submit" name="submit" class="btn mb-3" id="button_login_page_login">Login</button>
                         <div class="d-flex justify-content-end">
                             <label class="fst-italic">
                                 Create account

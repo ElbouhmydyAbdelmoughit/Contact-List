@@ -1,7 +1,7 @@
 <?php
 class Contact{
     /*properties*/
-   private $name;
+   public $name;
    private $email;
    private $address;
    private $phone;
