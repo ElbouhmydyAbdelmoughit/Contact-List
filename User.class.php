@@ -7,10 +7,22 @@ class User{
     /*---function insert new user----*/
     public function Insert($submit,$username,$password_user,$passwordverify){
         if(isset($submit)){
-            $requete="INSERT INTO user VALUES(NULL,'$password_user','$username')";
-            $db= Db::Connect();
-            $statement=$db->query($requete);
-            Db::deconnect();
+            if ($password_user == $passwordverify) {
+                $requete="INSERT INTO user VALUES(NULL,'$password_user','$username')";
+                $db= Db::Connect();
+                $statement=$db->query($requete);
+                Db::deconnect();
+            }else{
+                echo ("
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Password or Password verify incorrect',
+                  })
+                ");
+                die();
+            }
+
         }
     }
     /*---function delete user----*/
