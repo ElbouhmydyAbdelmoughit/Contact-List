@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="Login.php" id="form_login">
+        <form method="POST" action="Login.php" id="form_login" onsubmit="return validation()">
             <input type="hidden" name="id">
             <div class="mb-3">
                 <label for="Username" class="form-label">Username</label>

@@ -1,7 +1,7 @@
 <?php
   require ('Database.class.php');
   require ('User.class.php');
-  
+
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $insert->Insert($_POST['submit'],$_POST['username'],$_POST['password'],$_POST['passwordverify']);
     if (isset($_POST['submit'])) {
@@ -108,8 +108,8 @@
         </div>
     </header>
 
+    <script src="assets/js/script.js"></script>
     <script src="assets/js/sweetalert2.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
 </body>
 </html>
