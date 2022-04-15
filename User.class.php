@@ -12,16 +12,16 @@ class User{
                 $db= Db::Connect();
                 $statement=$db->query($requete);
                 Db::deconnect();
-            }else{
-                echo ("
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Password or Password verify incorrect',
-                  })
-                ");
-                die();
-            }
+            // }else{
+            //     echo ("
+            //     Swal.fire({
+            //         icon: 'error',
+            //         title: 'Oops...',
+            //         text: 'Password or Password verify incorrect',
+            //       })
+            //     ");
+            //     die();
+            // }
 
         }
     }
@@ -38,7 +38,7 @@ class User{
     //         $statement=$db->query($requete);
     //         Db::deconnect();
     //     }
-    // }
+    }
 }
 
 $insert = new User();
