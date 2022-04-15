@@ -1,10 +1,10 @@
 <?php
 class Db{
-    private static $user="root";
-    private static $password="";
-    private static $dbname="contacts";
-    private static $host= "localhost";
-    private static $connection= NULL;
+    private $user="root";
+    private $password="";
+    private $dbname="contacts";
+    private $host= "localhost";
+    private $connection= NULL;
         
     public static function Connect(){
         try {
