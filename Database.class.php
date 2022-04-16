@@ -15,9 +15,9 @@ class Db{
 
     public static function query($requete){
         $db = self::Connect();
-        $sql=$db->query($requete);
-        if (0) {
-            
+        $Query=$db->query($requete);
+        if (str_contains($requete,"SELECT")==true) {
+            return $Query->fetchAll();
         }
     }
 
