@@ -1,6 +1,5 @@
 <?php
-
-use Contact as GlobalContact;
+require_once("Database.class.php");
 
 class Contact {
     public $name;
@@ -11,8 +10,13 @@ class Contact {
     public function select(){
         $db=Db::Connect();
         $statement = $db->query('SELECT * FROM contact');
-        while ($row = $statement->fetchAll()) {
-            var_dump($row);
+        while ($row = $statement->fetch()) {
+            echo'<div class="d-flex">
+                    <div>'.$row['name'].'</div>
+                    <div>'.$row['email'].'</div>
+                    <div>'.$row['address'].'</div>
+                    <div>'.$row['phone'].'</div>
+                </div>';
         }
     }
 }

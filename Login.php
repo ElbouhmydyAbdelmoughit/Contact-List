@@ -1,6 +1,6 @@
 <?php
-  require ('Database.class.php');
-  require ('User.class.php');
+  require_once('Database.class.php');
+  require_once('User.class.php');
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $insert->Insert($_POST['submit'],$_POST['username'],$_POST['password'],$_POST['passwordverify']);
@@ -11,8 +11,7 @@
         $db = Db::Connect();
         $statement= $db->query($requete);
         $result= $statement->PDO::fetch();
-        $count= $statement->rowCount();
-        if ($count==1) {
+        if ($statement->rowCount() == 1) {
             header('location:contact.php');
         }
     }

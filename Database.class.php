@@ -2,13 +2,11 @@
 class Db{
     private $user="root";
     private $password="";
-    private $dbname="contacts";
-    private $host= "localhost";
     private $connection= NULL;
-        
+
     public static function Connect(){
         try {
-            self::$connection = new PDO('mysql:host=".self::$host.";dbname=".self::$dbname"',self::$user,self::$password);
+            self::$connection = new PDO("mysql:host=localhost;dbname=contacts",self::$user,self::$password);
         } catch (PDOException $e) {
             die($e->getMessage());
         }
@@ -16,8 +14,11 @@ class Db{
     }
 
     public static function query($requete){
-         $db = self::Connect();
+        $db = self::Connect();
         $sql=$db->query($requete);
+        if (0) {
+            
+        }
     }
 
     public static function deconnect(){

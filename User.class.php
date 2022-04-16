@@ -1,5 +1,5 @@
 <?php
-require 'Database.class.php';
+require_once('Database.class.php');
 
 class User{
     public $username;
