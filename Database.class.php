@@ -25,3 +25,4 @@ class Db{
         self::$connection =NULL; 
     }
 }
+Db::Connect();

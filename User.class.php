@@ -8,8 +8,8 @@ class User{
     public function Insert($submit,$username,$password_user,$passwordverify){
         if(isset($submit)){
             if ($password_user == $passwordverify) {
-                $requete="INSERT INTO user VALUES(NULL,'$password_user','$username')";
                 $db= Db::Connect();
+                $requete=Db::query("INSERT INTO user VALUES(NULL,'$password_user','$username')");
                 $statement=$db->query($requete);
                 Db::deconnect();
             // }else{
