@@ -1,12 +1,14 @@
 <?php
-class Db{
-    private $user="root";
-    private $password="";
-    private $connection= NULL;
+class Database{
+    private static $host="localhost";
+    private static $dbname="contacts";
+    private static $user="root";
+    private static $password="";
+    private static $connection= NULL;
 
     public static function Connect(){
         try {
-            self::$connection = new PDO("mysql:host=localhost;dbname=contacts",self::$user,self::$password);
+            self::$connection = new PDO("mysql:host=".self::$host.";dbname=".self::$dbname."",self::$user,self::$password);
         } catch (PDOException $e) {
             die($e->getMessage());
         }
@@ -25,4 +27,3 @@ class Db{
         self::$connection =NULL; 
     }
 }
-Db::Connect();

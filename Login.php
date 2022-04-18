@@ -1,14 +1,14 @@
 <?php
-  require_once('Database.class.php');
-  require_once('User.class.php');
+  require('Database.class.php');
+  require('User.class.php');
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $insert->Insert($_POST['submit'],$_POST['username'],$_POST['password'],$_POST['passwordverify']);
+    $insert->Insert($_POST['submit'],Checkinput($_POST['username']),Checkinput($_POST['password']),Checkinput($_POST['passwordverify']));
     if (isset($_POST['submit'])) {
-        $name= $_POST['username'];
-        $password= $_POST['password'];
+        $name=Checkinput($_POST['username']);
+        $name=Checkinput($_POST['password']);
         $requete=" SELECT * FROM user WHERE password_user='$password' && username ='$name'";
-        $db = Db::Connect();
+        $db = Database::Connect();
         $statement= $db->query($requete);
         $result= $statement->PDO::fetch();
         if ($statement->rowCount() == 1) {
@@ -17,11 +17,19 @@
     }
 
   }
+
+   function Checkinput($data){
+    $data= trim($data);
+    $data= stripslashes($data);
+    $data= htmlspecialchars($data);
+    return $data;
+}
   
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,6 +40,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2">
     <title>Contact List</title>
 </head>
+
 <body>
     <!---Create navbar--->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="NAVBAR_HOME_PAGE">
@@ -41,16 +50,10 @@
                 <img src="assets/img/Contact_logo_copy-removebg-preview.png" id="Logo_page" alt="image logo">
             </a>
             <!----Button menu--->
-            <button 
-                    class="navbar-toggler" 
-                    type="button" 
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#navmenu"
-                    aria-controls="navmenu" 
-                    aria-expanded="false" 
-                    aria-label="Toggle navigation" 
-                    style="background-color: #FF8303;">
-                    <!-------icon menu--->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
+                aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation"
+                style="background-color: #FF8303;">
+                <!-------icon menu--->
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!----List navbar--->
@@ -74,7 +77,8 @@
                     <form id="form_login" method="POST">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Username</label>
-                            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="text" name="username" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -89,14 +93,11 @@
                             <label class="fst-italic">
                                 Create account
                                 <!----Button Modal---->
-                                <a href="#" 
-                                    type="button" 
-                                    class="btn text-primary pt-0 ps-0" 
-                                    data-bs-toggle="modal" 
+                                <a href="#" type="button" class="btn text-primary pt-0 ps-0" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">Sign up
                                 </a>
                             </label>
-                                <!---Call signup page--->
+                            <!---Call signup page--->
                             <?php 
                                 include "signup.php" 
                             ?>
@@ -111,4 +112,5 @@
     <script src="assets/js/sweetalert2.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

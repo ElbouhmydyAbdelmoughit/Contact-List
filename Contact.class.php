@@ -1,5 +1,5 @@
 <?php
-require_once("Database.class.php");
+require("Database.class.php");
 
 class Contact {
     public $name;
@@ -8,7 +8,7 @@ class Contact {
     public $phone;
 
     public function select(){
-        $db=Db::Connect();
+        $db=Database::Connect();
         $statement = $db->query('SELECT * FROM contact');
         while ($row = $statement->fetch()) {
             echo'<div class="d-flex">

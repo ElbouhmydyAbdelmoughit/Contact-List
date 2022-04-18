@@ -1,5 +1,5 @@
 <?php
-require_once('Database.class.php');
+require('Database.class.php');
 
 class User{
     public $username;
@@ -8,10 +8,10 @@ class User{
     public function Insert($submit,$username,$password_user,$passwordverify){
         if(isset($submit)){
             if ($password_user == $passwordverify) {
-                $db= Db::Connect();
-                $requete=Db::query("INSERT INTO user VALUES(NULL,'$password_user','$username')");
+                $db= Database::Connect();
+                $requete=Database::query("INSERT INTO user VALUES(NULL,'$password_user','$username')");
                 $statement=$db->query($requete);
-                Db::deconnect();
+                Database::deconnect();
             // }else{
             //     echo ("
             //     Swal.fire({
@@ -34,17 +34,10 @@ class User{
     //     if (isset($_POST['id'])) {
     //         $id= $_POST['id'];
     //         $requete="ALTER TABLE user DROP COLUMN WHERE id = .'$id'";
-    //         $db= Db::Connect();
+    //         $db= Database::Connect();
     //         $statement=$db->query($requete);
-    //         Db::deconnect();
+    //         Database::deconnect();
     //     }
-    }
-
-    public function Checkinput($data){
-        $data= trim($data);
-        $data= stripslashes($data);
-        $data= htmlspecialchars($data);
-        return $data;
     }
 }
 
