@@ -11,6 +11,11 @@ class User{
                 $db= Database::Connect();
                 $requete=Database::query("INSERT INTO user VALUES(NULL,'$password_user','$username')");
                 $statement=$db->query($requete);
+                $sql=$db->query("SELECT * FROM users WHERE username='$username' OR password_user='$password_user'");
+                $count=$sql->rowCount();
+                if ($count > 0) {
+                    echo 'alert("This account allready exicte");';
+                }
                 Database::deconnect();
             // }else{
             //     echo ("

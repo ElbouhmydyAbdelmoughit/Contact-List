@@ -12,10 +12,9 @@
         $db = Database::Connect();
         $statement=$db->query("SELECT * FROM user WHERE password_user='$password' && username ='$name'");
         $count= $statement->rowCount();
-        echo $count;
-        // if ($count == 1) {
-        //     header("location:contact.php");
-        // }
+        if ($count == 1) {
+            header("location:contact.php");
+        }
     }
 
   }
