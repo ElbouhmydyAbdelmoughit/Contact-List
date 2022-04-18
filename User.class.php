@@ -1,11 +1,11 @@
 <?php
-require('Database.class.php');
+require_once('Database.class.php');
 
 class User{
     public $username;
     public $password_user;
     /*---function insert new user----*/
-    public function Insert($submit,$username,$password_user,$passwordverify){
+    public function Insert($username,$password_user,$passwordverify){
         if(isset($submit)){
             if ($password_user == $passwordverify) {
                 $db= Database::Connect();

@@ -1,19 +1,21 @@
 <?php
-  require('Database.class.php');
-  require('User.class.php');
+  require_once('Database.class.php');
+  require_once('User.class.php');
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $insert->Insert($_POST['submit'],Checkinput($_POST['username']),Checkinput($_POST['password']),Checkinput($_POST['passwordverify']));
+
+    $name=Checkinput($_POST['username']);
+    $password=Checkinput($_POST['password']);
+    $passwordverify=Checkinput($_POST['passwordverify']);
+    $insert->Insert($name,$password,$passwordverify);
     if (isset($_POST['submit'])) {
-        $name=Checkinput($_POST['username']);
-        $name=Checkinput($_POST['password']);
-        $requete=" SELECT * FROM user WHERE password_user='$password' && username ='$name'";
         $db = Database::Connect();
-        $statement= $db->query($requete);
-        $result= $statement->PDO::fetch();
-        if ($statement->rowCount() == 1) {
-            header('location:contact.php');
-        }
+        $statement=$db->query("SELECT * FROM user WHERE password_user='$password' && username ='$name'");
+        $count= $statement->rowCount();
+        echo $count;
+        // if ($count == 1) {
+        //     header("location:contact.php");
+        // }
     }
 
   }
@@ -99,7 +101,7 @@
                             </label>
                             <!---Call signup page--->
                             <?php 
-                                include "signup.php" 
+                                require "signup.php"; 
                             ?>
                         </div>
                     </form>
