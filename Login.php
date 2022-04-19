@@ -19,7 +19,7 @@
             session_start();
             $_SESSION['name']=$name;
             $_SESSION['username']=$result['username'];
-            header("location:contact.php");
+            header("location:profil.php");
             if (isset($_POST['Checkbox'])) {
                 setcookie('username',$name,time()+1000*60*2);
                 setcookie('password_user',$password,time()+1000*60);

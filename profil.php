@@ -38,6 +38,9 @@
                 <ul class="navbar-nav ms-auto" id="navbar_contact_page">
                     <!----navb Button Login-->
                     <li class="nav-item">
+                        <a href="Add_contact.php" class="btn" id="btn_Contact"><?php echo $_SESSION['username'];?></a>
+                    </li>
+                    <li class="nav-item">
                         <a href="contact.php" class="btn" id="btn_Contact">Contact</a>
                     </li>
                     <li class="nav-item">
@@ -50,7 +53,7 @@
     <!------Header------>
     <header class="my-5">
         <section>
-            <h2 id="title_contact_page"></span></h2>
+            <h2 id="title_contact_page">Welcome! <span><?php echo $_SESSION['username'];?></span></h2>
             <hr style="border: black;">
         </section>
     </header>

@@ -159,12 +159,20 @@ header{
     background-color: red;
     color: black;
 }
-#logo_animate,#btn_login_animate{
-    animation-delay: 2s;
+#btn_Contact{
+    letter-spacing: 2px;
+    color: #FF8303;
 }
-#h1_animate,#image_section_animate{
-    animation-delay: 1s;
+#btn_Contact:hover{
+    color: #000000;
 }
-#btn_continue_animate{
-    animation-delay: 0.3s;
+#btn_Logout{
+    letter-spacing: 2px;
+    color: #FF8303;
+}
+#btn_Logout:hover{
+    color: #000000;
+}
+#title_contact_page{
+    color: #FF8303;
 }
