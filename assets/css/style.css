@@ -173,6 +173,8 @@ header{
 #btn_Logout:hover{
     color: #000000;
 }
-#title_contact_page{
-    color: #FF8303;
+#info_profil p{
+    display: flex;
+    align-items: left;
+    justify-content: left;
 }

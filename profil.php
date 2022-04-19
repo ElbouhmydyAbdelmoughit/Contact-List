@@ -41,7 +41,7 @@
                         <a href="Add_contact.php" class="btn" id="btn_Contact"><?php echo $_SESSION['username'];?></a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.php" class="btn" id="btn_Contact">Contact</a>
+                        <a href="contact.php" class="btn" id="btn_Contact">Contacts</a>
                     </li>
                     <li class="nav-item">
                         <a href="index.php" class="btn" id="btn_Logout">Logout</a>
@@ -53,8 +53,30 @@
     <!------Header------>
     <header class="my-5">
         <section>
-            <h2 id="title_contact_page">Welcome! <span><?php echo $_SESSION['username'];?></span></h2>
+            <h2 id="title_contact_page">Welcome <span><?php echo $_SESSION['username'];?></span></h2>
             <hr style="border: black;">
+        </section>
+        <section id="info_profil">
+            <div class="container w-50 pb-2">
+                <div class="d-flex w-100 d-flex justify-content-center align-item-center shadow pb-4" id="content">
+                    <div class="form w-75 pt-3">
+                        <!-----Form Info User Profil------->
+                        <h3 class=" border-start border-3 ps-3 mb-5 rounded-1 fw-bold" id="H2_page_login">Info Profile
+                        </h3>
+                        <div class="mx-auto">
+                            <p>
+                                Username :<span>Abdelmoughit</span>
+                            </p>
+                            <p>
+                                Signup Date :<span>2022-04-19 10:36:18</span>
+                            </p>
+                            <p>
+                                Last Login :<span>2022-04-19 10:36:18</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </header>
 

@@ -38,7 +38,7 @@
                 <ul class="navbar-nav ms-auto" id="navbar_contact_page">
                     <!----navb Button Login-->
                     <li class="nav-item">
-                        <a href="contact.php" class="btn" id="btn_Contact">Contact</a>
+                        <a href="Add_contact.php" class="btn" id="btn_Contact">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a href="index.php" class="btn" id="btn_Logout">Logout</a>
