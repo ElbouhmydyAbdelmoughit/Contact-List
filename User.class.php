@@ -14,7 +14,7 @@ class User{
                 $sql=$db->query("SELECT * FROM users WHERE username='$username' OR password_user='$password_user'");
                 $count=$sql->rowCount();
                 if ($count > 0) {
-                    echo 'alert("This account allready exicte");';
+                    echo 'alert("This account allready existe");';
                 }
                 Database::deconnect();
             // }else{

@@ -14,7 +14,7 @@
         $count= $statement->rowCount();
         if ($count == 1) {
             header("location:contact.php");
-        }
+        }else echo'alert("This account dont existe")';
     }
 
   }
