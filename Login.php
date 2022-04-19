@@ -1,24 +1,27 @@
 <?php
   require_once('Database.class.php');
   require_once('User.class.php');
-
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
     $name=Checkinput($_POST['username']);
     $password=Checkinput($_POST['password']);
-    $passwordverify=Checkinput($_POST['passwordverify']);
-    $insert->Insert($name,$password,$passwordverify);
+    /*-----insert-----*/
     if (isset($_POST['submit'])) {
+        $passwordverify=Checkinput($_POST['passwordverify']);
+        $insert->Insert($name,$password,$passwordverify);
+    }
+
+  /*-------login------*/
+  if (isset($_POST['sub_log'])) {
         $db = Database::Connect();
         $statement=$db->query("SELECT * FROM user WHERE password_user='$password' && username ='$name'");
         $count= $statement->rowCount();
         if ($count == 1) {
+            
             header("location:contact.php");
-        }else echo'alert("This account dont existe")';
-    }
-
+        }
   }
-
+}
+  /*virefy input */
    function Checkinput($data){
     $data= trim($data);
     $data= stripslashes($data);
@@ -89,7 +92,7 @@
                             <input type="checkbox" name="checkbox" class="form-check-input" id="CheckBox">
                             <label class="form-check-label" for="CheckBox">Check me out</label>
                         </div>
-                        <button type="submit" name="submit" class="btn mb-3" id="button_login_page_login">Login</button>
+                        <button type="submit" name="sub_log" class="btn mb-3" id="button_login_page_login">Login</button>
                         <div class="d-flex justify-content-end">
                             <label class="fst-italic">
                                 Create account
@@ -99,11 +102,13 @@
                                 </a>
                             </label>
                             <!---Call signup page--->
-                            <?php 
-                                require "signup.php"; 
-                            ?>
+                            
                         </div>
+                       
                     </form>
+                    <?php 
+                            require "signup.php"; 
+                    ?>
                 </div>
             </div>
         </div>
