@@ -7,17 +7,15 @@ class User{
     /*---function insert new user----*/
     public function Insert($username,$password_user,$passwordverify){
         $db= Database::Connect();
-        $sql=$db->query("SELECT * FROM user WHERE  username='$username'");
-        $count=$sql->rowCount();
-        if ($count > 0) {
+        $result=$db->query("SELECT * FROM user WHERE  username='$username'");
+        if ($result) {
             echo ("This account allready existe");
         }else{
             if ($password_user == $passwordverify) {
                 /*verify input if empty or not*/
                 if (!empty($username) && !empty($password_user)) {
                     $requete="INSERT INTO user VALUES(NULL,'$password_user','$username',sysdate())";
-                    $statement=$db->query($requete);
-                    Database::deconnect();
+                    $db->query($requete);
                 }
             }else echo("password error");
         }

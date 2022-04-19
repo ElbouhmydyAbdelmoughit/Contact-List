@@ -12,19 +12,23 @@ class Database{
         } catch (PDOException $e) {
             die($e->getMessage());
         }
-        return self::$connection;
+        return new Database();
+    }
+    private function __construct(){
+
     }
 
-    public static function query($requete){
-        $db = self::Connect();
-        $Query = $db->prepare($requete);
+    public function query($requete){
+        $Query = self::$connection->prepare($requete);
         $Query->execute();
         if (str_contains($requete,"SELECT")==true) {
-            return $Query->fetch();
+            return $Query->fetch(PDO::FETCH_ASSOC);
         }
     }
 
-    public static function deconnect(){
+    public  function __destruct()
+    {
         self::$connection =NULL; 
+   
     }
 }

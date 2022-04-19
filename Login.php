@@ -13,16 +13,16 @@
   /*-------login------*/
   if (isset($_POST['sub_log'])) {
         $db = Database::Connect();
-        $statement=$db->query("SELECT * FROM user WHERE password_user='$password' && username ='$name'");
-        $count= $statement->rowCount();
-        if ($count == 1) {
+        $result=$db->query("SELECT * FROM user WHERE password_user='$password' && username ='$name'");
+        if ($result) {
+            echo 'user found';
             session_start();
             $_SESSION['name']=$name;
-            $_SESSION['username']=$statement['username'];
+            $_SESSION['username']=$result['username'];
             header("location:contact.php");
             if (isset($_POST['Checkbox'])) {
                 setcookie('username',$name,time()+1000*60*2);
-                setcookie('password_user',$password,time()+1000*60*2);
+                setcookie('password_user',$password,time()+1000*60);
             }
         }
   }
