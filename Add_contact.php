@@ -7,7 +7,6 @@
             </div>
             <div class="modal-body">
                 <form id="form_login" method="POST" action="contact.php">
-                    <input type="hidden" name="id">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp">

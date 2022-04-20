@@ -18,10 +18,21 @@ class Contact{
 
     public function delete($id){
 
+        $db = Database::Connect();
+        if(!empty($_GET['iddelete'])){
+            try{
+                $id = $_GET['iddelete'];
+                $result = $db->query("DELETE * FROM contact WHERE id='$id'");
+            }catch(PDOException $e){
+                die($e->getMessage());
+            }
+        }
     }
 
     public function update($id){
 
+        $db = Database::Connect();
+        
     }
 
     public  function logout(){
