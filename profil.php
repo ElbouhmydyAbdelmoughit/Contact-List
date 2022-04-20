@@ -54,7 +54,7 @@
     <!------Header------>
     <header class="my-5">
         <section>
-            <h3 class="fw-bold" id="title_contact_page">Welcome <span id="span_user" class="badge d-inline"><?php echo $_SESSION['username'];?></span></h3>
+            <h3 class="fw-bold" id="title_contact_page">Welcome <span id="span_user" class="badge bg-info d-inline"><?php echo $_SESSION['username'];?></span></h3>
             <hr style="border: black;">
         </section>
         <section id="info_profil">
@@ -69,7 +69,7 @@
                                 Username :<span>Abdelmoughit</span>
                             </p>
                             <p>
-                                Signup Date :<span>2022-04-19 10:36:18</span>
+                                Signup Date :<span><?php echo $_SESSION['data_insert'];?></span>
                             </p>
                             <p>
                                 Last Login :<span>2022-04-19 10:36:18</span>

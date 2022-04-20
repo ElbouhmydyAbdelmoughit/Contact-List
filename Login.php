@@ -19,6 +19,7 @@
             session_start();
             $_SESSION['name']=$name;
             $_SESSION['username']=$result['username'];
+            $_SESSION['data_insert']=$result['data_insert'];
             header("location:profil.php");
             if (isset($_POST['Checkbox'])) {
                 setcookie('username',$name,time()+1000*60*2);

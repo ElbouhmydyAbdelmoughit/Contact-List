@@ -2,6 +2,7 @@
     require('Session.php');
     require('Database.class.php');
     require('User.class.php');
+    require('Contact.class.php');
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +46,7 @@
                             data-bs-target="#exampleModal" id="btn_Contact">Add Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php" class="btn" id="btn_Logout">Logout</a>
+                        <a href="index.php" class="btn" onclick="logout();" id="btn_Logout">Logout</a>
                     </li>
                 </ul>
             </div>
