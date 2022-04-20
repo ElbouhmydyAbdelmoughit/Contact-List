@@ -16,7 +16,13 @@ class Contact{
             }
     }
 
-   
+    public function delete($id){
+
+    }
+
+    public function update($id){
+
+    }
 
     public  function logout(){
         session_start();
