@@ -1,7 +1,7 @@
 <?php 
+    require('Session.php');
     require('Database.class.php');
     require('User.class.php');
-    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +38,11 @@
                 <ul class="navbar-nav ms-auto" id="navbar_contact_page">
                     <!----navb Button Login-->
                     <li class="nav-item">
-                        <a href="Add_contact.php" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn_Contact">Add Contact</a>
+                        <a href="#" class="btn" id="btn_Contact"><?php echo $_SESSION['username'];?></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Add_contact.php" type="button" class="btn" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" id="btn_Contact">Add Contact</a>
                     </li>
                     <li class="nav-item">
                         <a href="index.php" class="btn" id="btn_Logout">Logout</a>

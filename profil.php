@@ -1,7 +1,8 @@
 <?php 
+    require('Session.php');
     require('Database.class.php');
     require('User.class.php');
-    session_start();
+    require('Contact.class.php');
 ?>
 
 <!DOCTYPE html>
@@ -38,13 +39,13 @@
                 <ul class="navbar-nav ms-auto" id="navbar_contact_page">
                     <!----navb Button Login-->
                     <li class="nav-item">
-                        <a href="Add_contact.php" class="btn" id="btn_Contact"><?php echo $_SESSION['username'];?></a>
+                        <a href="#" class="btn" id="btn_Contact"><?php echo $_SESSION['username'];?></a>
                     </li>
                     <li class="nav-item">
                         <a href="contact.php" class="btn" id="btn_Contact">Contacts</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php" class="btn" id="btn_Logout">Logout</a>
+                        <a href="index.php" class="btn" onclick="logout();" id="btn_Logout">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -53,7 +54,7 @@
     <!------Header------>
     <header class="my-5">
         <section>
-            <h2 id="title_contact_page">Welcome <span><?php echo $_SESSION['username'];?></span></h2>
+            <h3 class="fw-bold" id="title_contact_page">Welcome <span id="span_user" class="badge d-inline"><?php echo $_SESSION['username'];?></span></h3>
             <hr style="border: black;">
         </section>
         <section id="info_profil">
