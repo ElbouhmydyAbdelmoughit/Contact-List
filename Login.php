@@ -1,7 +1,9 @@
 <?php
   require_once('Database.class.php');
   require_once('User.class.php');
+
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
     $name=Database::Checkinput($_POST['username']);
     $password=Database::Checkinput($_POST['password']);
     /*-----insert-----*/
@@ -12,6 +14,7 @@
 
   /*-------login------*/
   if (isset($_POST['sub_log'])) {
+      
         $db = Database::Connect();
         $result=$db->query("SELECT * FROM user WHERE password_user='$password' && username ='$name'");
         $result=$result->fetch();

@@ -2,10 +2,13 @@
 require_once('Database.class.php');
 
 class User{
+
     public $username;
     public $password_user;
+
     /*---function insert new user----*/
     public function Insert($username,$password_user,$passwordverify){
+        
         $db= Database::Connect();
         $result=$db->query("SELECT * FROM user WHERE  username='$username'");
         if ($result) {

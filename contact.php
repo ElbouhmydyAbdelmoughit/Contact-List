@@ -1,9 +1,8 @@
 <?php 
     require('Session.php');
     require('Database.class.php');
-    require('User.class.php');
     require('Contact.class.php');
-
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $name=Database::Checkinput($_POST['name']);
@@ -13,8 +12,7 @@
 
         /*-----insert-----*/
         if (isset($_POST['submit'])) {
-
-            $insert->Insert($name,$email,$address,$phone);
+            $contact->Add($name,$email,$address,$phone);
         }
     }
 
@@ -115,8 +113,8 @@
         <?php include('Add_contact.php');?>
     </header>
 
-    <script src="assets/js/script.js"></script>
     <script src="assets/js/sweetalert2.js"></script>
+    <script src="assets/js/script.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 

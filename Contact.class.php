@@ -1,7 +1,7 @@
 <?php
 require_once("Database.class.php");
 
-class Contact extends Database{
+class Contact{
     public $name;
     public $email;
     public $address;
@@ -32,6 +32,6 @@ class Contact extends Database{
     }
 }
 
-
+$contact = new Contact();
 
 ?>
