@@ -3,6 +3,11 @@
     require('Database.class.php');
     require('User.class.php');
     require('Contact.class.php');
+
+    /*--time of lest login--*/
+    $date=date('Y-m-d H:i:s');
+    $_SESSION['Date_login'] = $date;
+    
 ?>
 
 <!DOCTYPE html>
@@ -54,8 +59,8 @@
     <!------Header------>
     <header class="my-5">
         <section>
-            <h3 class="fw-bold" id="title_contact_page">Welcome <span id="span_user" class="badge bg-info d-inline"><?php echo $_SESSION['username'];?></span></h3>
-            <hr style="border: black;">
+            <h3 class="fw-bold fst-italic" id="title_contact_page">Welcome <span id="span_user" class="badge d-inline" style="background-color: #FF8C32;"><?php echo $_SESSION['username'];?> !</span></h3>
+            <hr class="my-5">
         </section>
         <section id="info_profil">
             <div class="container w-50 pb-2">
@@ -66,13 +71,13 @@
                         </h3>
                         <div class="mx-auto">
                             <p>
-                                Username :<span>Abdelmoughit</span>
+                                Name :<span class="ms-3 text-wrap"><?php echo $_SESSION['username'];?></span>
                             </p>
                             <p>
-                                Signup Date :<span><?php echo $_SESSION['data_insert'];?></span>
+                                Signup Date :<span class="ms-3 text-wrap"><?php echo $_SESSION['data_insert'];?></span>
                             </p>
                             <p>
-                                Last Login :<span>2022-04-19 10:36:18</span>
+                                Last Login :<span class="ms-3 text-wrap"><?php echo $date;?></span>
                             </p>
                         </div>
                     </div>
