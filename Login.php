@@ -2,11 +2,11 @@
   require_once('Database.class.php');
   require_once('User.class.php');
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $name=Checkinput($_POST['username']);
-    $password=Checkinput($_POST['password']);
+    $name=Database::Checkinput($_POST['username']);
+    $password=Database::Checkinput($_POST['password']);
     /*-----insert-----*/
     if (isset($_POST['submit'])) {
-        $passwordverify=Checkinput($_POST['passwordverify']);
+        $passwordverify= Database::Checkinput($_POST['passwordverify']);
         $insert->Insert($name,$password,$passwordverify);
     }
 
@@ -28,13 +28,6 @@
             }
         }
   }
-}
-  /*virefy input */
-   function Checkinput($data){
-    $data= trim($data);
-    $data= stripslashes($data);
-    $data= htmlspecialchars($data);
-    return $data;
 }
   
 ?>

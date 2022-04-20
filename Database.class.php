@@ -24,6 +24,14 @@ class Database{
         return $Query;
     }
 
+    /*virefy input */
+    public static function Checkinput($data){
+    $data= trim($data);
+    $data= stripslashes($data);
+    $data= htmlspecialchars($data);
+    return $data;
+}
+
     public  function __destruct()
     {
         self::$connection =NULL; 

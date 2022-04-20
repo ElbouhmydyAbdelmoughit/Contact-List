@@ -6,7 +6,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="form_login">
+        <form id="form_login" method="POST" action="contact.php">
               <input type="hidden" name="id">
               <div class="mb-3">
                   <label for="name" class="form-label">Name</label>
@@ -28,7 +28,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn_close_contact_page">Close</button>
-        <button type="button" class="btn btn-primary" id="btn_create">Create</button>
+        <button type="submit" class="btn btn-primary" id="btn_create">Create</button>
       </div>
     </div>
   </div>

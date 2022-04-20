@@ -1,7 +1,7 @@
 <?php
 require_once("Database.class.php");
 
-class Contact{
+class Contact extends Database{
     public $name;
     public $email;
     public $address;

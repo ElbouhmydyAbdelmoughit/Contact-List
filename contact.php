@@ -3,6 +3,22 @@
     require('Database.class.php');
     require('User.class.php');
     require('Contact.class.php');
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        $name=Database::Checkinput($_POST['name']);
+        $email=Database::Checkinput($_POST['email']);
+        $address=Database::Checkinput($_POST['address']);
+        $phone=Database::Checkinput($_POST['phone']);
+
+        /*-----insert-----*/
+        if (isset($_POST['submit'])) {
+
+            $insert->Insert($name,$email,$address,$phone);
+        }
+    }
+
+
 ?>
 
 <!DOCTYPE html>
