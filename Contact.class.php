@@ -1,23 +1,27 @@
 <?php
 require_once("Database.class.php");
 
-class Contact {
+class Contact{
     public $name;
-    public $emai;
+    public $email;
     public $address;
     public $phone;
 
-    public function select(){
-        $db=Database::Connect();
-        $statement = $db->query('SELECT * FROM contact');
-        while ($row = $statement->fetch()) {
-            echo'<div class="d-flex">
-                    <div>'.$row['name'].'</div>
-                    <div>'.$row['email'].'</div>
-                    <div>'.$row['address'].'</div>
-                    <div>'.$row['phone'].'</div>
-                </div>';
-        }
+
+    public function Add($name,$email,$address,$phone){
+            $db= Database::Connect();    
+            /*verify input if empty or not*/
+            if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['address'])) {
+                $db->query("INSERT INTO contact VALUES(NULL,'$name','$email','$address','$phone')");
+            }
+    }
+
+    public function delete($id){
+
+    }
+
+    public function update($id){
+
     }
 
     public  function logout(){
@@ -28,3 +32,6 @@ class Contact {
     }
 }
 
+
+
+?>

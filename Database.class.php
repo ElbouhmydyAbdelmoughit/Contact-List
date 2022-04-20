@@ -21,9 +21,7 @@ class Database{
     public function query($requete){
         $Query = self::$connection->prepare($requete);
         $Query->execute();
-        if (str_contains($requete,"SELECT")==true) {
-            return $Query->fetch(PDO::FETCH_ASSOC);
-        }
+        return $Query;
     }
 
     public  function __destruct()

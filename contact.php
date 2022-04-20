@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Contact List</title>
 </head>
 
@@ -56,36 +57,43 @@
     <header class="my-5">
         <section>
             <div class="container">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                            <th scope="col">Operator</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div style=" overflow-x: auto;">
+                    <div class="mx-3" style="min-width: 800px;">
+                        <table class="table" style="border-collapse:separate;">
+                            <thead>
+                                <tr style="color: gray;">
+                                    <td scopre="col">Id</td>
+                                    <td scopre="col">Name</td>
+                                    <td scopre="col">Email</td>
+                                    <td scopre="col">Address</td>
+                                    <td scopre="col">Phone</td>
+                                    <td scopre="col">Operator</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php 
+                                    $db=Database::Connect();
+                                    $statemant=$db->query("SELECT * FROM contact");
+                                    if ($statemant) {
+                                        foreach ($statemant->fetchAll() as $row ) {
+                                            echo'<tr>
+                                                    <td>'.$row['id'].'</td>
+                                                    <td>'.$row['name'].'</td>
+                                                    <td>'.$row['email'].'</td>
+                                                    <td>'.$row['address'].'</td>
+                                                    <td>'.$row['phone'].'</td>
+                                                    <td>
+                                                        <a href="#" onclick=delete();><i class="bi bi-pencil text-info btn"></i></a>
+                                                        <a href="#" onclick=update();><i class="bi bi-trash text-info btn"></i></a>
+							                        </td>
+						                        </tr>';
+                                        }
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
         <?php include('Add_contact.php');?>

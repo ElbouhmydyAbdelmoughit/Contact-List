@@ -7,17 +7,18 @@
       </div>
       <div class="modal-body">
         <form id="form_login">
+              <input type="hidden" name="id">
               <div class="mb-3">
                   <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                   <label for="name" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                   <label for="address" class="form-label">Address</label>
-                  <input type="text" class="form-control" id="address" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" name="address" id="address" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                   <label for="phone" class="form-label">Phone</label>

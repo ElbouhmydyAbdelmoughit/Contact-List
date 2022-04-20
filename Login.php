@@ -14,6 +14,7 @@
   if (isset($_POST['sub_log'])) {
         $db = Database::Connect();
         $result=$db->query("SELECT * FROM user WHERE password_user='$password' && username ='$name'");
+        $result=$result->fetch();
         if ($result) {
             echo 'user found';
             session_start();
