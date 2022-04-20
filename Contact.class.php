@@ -16,17 +16,11 @@ class Contact{
             }
     }
 
-    public function delete($id){
+    public function delete($id,$table){
 
-        $db = Database::Connect();
-        if(!empty($_GET['iddelete'])){
-            try{
-                $id = $_GET['iddelete'];
-                $result = $db->query("DELETE * FROM contact WHERE id='$id'");
-            }catch(PDOException $e){
-                die($e->getMessage());
-            }
-        }
+        $db = Database::Connect();        
+         $res = $db->query("DELETE FROM $table WHERE id='.$id.'");
+         return $res;
     }
 
     public function update($id){

@@ -17,10 +17,9 @@
         
     }
     /*--Delete contact--*/
-    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-
-        $id=$_GET['iddelete'];
-        $contact->delete($id);
+    $id = $_GET['iddelete'];
+    if (!empty($_GET['iddelete'])) {
+        $contact->delete($id,'contact');
     }
 
 
@@ -105,8 +104,8 @@
                                                     <td>'.$row['address'].'</td>
                                                     <td>'.$row['phone'].'</td>
                                                     <td>
-                                                        <a href="contact.php?iddelete='.$id.'"><i class="bi bi-pencil text-info btn"></i></a>
-                                                        <a href="contact.php?idupdate='.$id.'"><i class="bi bi-trash text-info btn"></i></a>
+                                                        <a href="contact.php?idupdate='.$id.'"><i class="bi bi-pencil text-info btn"></i></a>
+                                                        <a href="contact.php?iddelete='.$id.'"><i class="bi bi-trash text-info btn"></i></a>
 							                        </td>
 						                        </tr>';
                                         }
