@@ -23,31 +23,30 @@ const username_login = document.getElementById("username_login");
 const password_login = document.getElementById("password_login");
 /*--Function validation login page---*/
 function validation_login() {
-    if (username_login == "" || username_login == NULL) {
+    if (username_login.value == "" || username_login.value == null) {
+        
         alert("Please fill in Username");
         return false;
-    }
-    else if (password_login.value == "" || password_login.value == NULL) {
+    }else if (password_login.value == "" || email_contact.value == null) {
         alert("Please fill in Password");
         return false;
-    }else{
-        return true;
-    }
+    }else{return true;}
 }
 
 const username_contact = document.getElementById("name");
 const email_contact = document.getElementById("email");
-const address_contact = document.getElementById("phone");
+const address_contact = document.getElementById("Address");
 /*--Function validation AddContact page---*/
 function ValidationContact(){
-    if (username_contact.value == "" || username_contact.value == NULL) {
+    if (username_contact.value == "" || username_contact.value == null) {
+        
         alert("Please fill in Username");
         return false;
-    }else if (email_contact.value == "" || email_contact.value == NULL) {
+    }else if (email_contact.value == "" || email_contact.value == null) {
         alert("Please fill in Email");
         return false;
-    }else if (address_contact.value == "" || address_contact.value == NULL) {
+    }else if (address_contact.value == "" || address_contact.value == null) {
         alert("Please fill in Address");
         return false;
-    }else return true;
+    }else{return true;}
 }
