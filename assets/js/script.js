@@ -19,9 +19,24 @@ function validation(){
     }else{return true;}
 }
 
-let SelectedDeleteID=-1;
-function deleteSelectedID(){
-    if(deleteSelectedID!=-1)
-        window.location.href="contact.php?iddelete="+SelectedDeleteID;
-}
-//for delete btns
+const username_login = document.getElementById("username");
+const password_login = document.getElementById("password");
+
+    function validation_login() {
+        if (username_login == "" || username_login == NULL) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please fill in Username!',
+            })
+            return false;
+        }
+        if (password_login == "" || password_login == NULL) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please fill in Password!',
+            })
+            return false;
+        }
+    }

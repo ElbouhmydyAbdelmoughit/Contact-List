@@ -96,7 +96,8 @@
                             <input type="checkbox" name="checkbox" class="form-check-input" id="CheckBox">
                             <label class="form-check-label" for="CheckBox">Check me out</label>
                         </div>
-                        <button type="submit" name="sub_log" class="btn mb-3" id="button_login_page_login">Login</button>
+                        <button type="submit" name="sub_log" class="btn mb-3"
+                            id="button_login_page_login">Login</button>
                         <div class="d-flex justify-content-end">
                             <label class="fst-italic">
                                 Create account
@@ -106,9 +107,9 @@
                                 </a>
                             </label>
                             <!---Call signup page--->
-                            
+
                         </div>
-                       
+
                     </form>
                     <?php 
                             require "signup.php"; 
