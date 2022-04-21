@@ -17,8 +17,8 @@
         
     }
     /*--Delete contact--*/
-    $id = $_GET['iddelete'];
     if (!empty($_GET['iddelete'])) {
+        $id = $_GET['iddelete'];
         $contact->delete($id,'contact');
     }
 
@@ -37,7 +37,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.8/sweetalert2.min.css">
     <title>Contact List</title>
 </head>
 
@@ -104,8 +103,8 @@
                                                     <td>'.$row['address'].'</td>
                                                     <td>'.$row['phone'].'</td>
                                                     <td>
-                                                        <a href="contact.php?idupdate='.$id.'"><i class="bi bi-pencil text-info btn"></i></a>
-                                                        <a href="contact.php?iddelete='.$id.'"><i class="bi bi-trash text-info btn"></i></a>
+                                                        <a href="contact.php?idupdate='.$row['id'].'"><i class="bi bi-pencil text-info btn"></i></a>
+                                                        <a href="contact.php?iddelete='.$row['id'].'"><i class="bi bi-trash text-info btn"></i></a>
 							                        </td>
 						                        </tr>';
                                         }
@@ -120,7 +119,7 @@
         <?php include('Add_contact.php');?>
     </header>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.8/sweetalert2.min.js" integrity="sha512-7x7HoEikRZhV0FAORWP+hrUzl75JW/uLHBbg2kHnPdFmScpIeHY0ieUVSacjusrKrlA/RsA2tDOBvisFmKc3xw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/sweetalert2.js"></script>   
     <script src="assets/js/script.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -17,9 +17,8 @@ class Contact{
     }
 
     public function delete($id,$table){
-
         $db = Database::Connect();        
-         $res = $db->query("DELETE FROM $table WHERE id='.$id.'");
+         $res = $db->query("DELETE FROM $table WHERE id='$id'");
          return $res;
     }
 

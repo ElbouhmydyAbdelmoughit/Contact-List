@@ -17,3 +17,10 @@ function validation(){
         return false;
     }else{return true;}
 }
+
+let SelectedDeleteID=-1;
+function deleteSelectedID(){
+    if(deleteSelectedID!=-1)
+        window.location.href="contact.php?iddelete="+SelectedDeleteID;
+}
+//for delete btns
