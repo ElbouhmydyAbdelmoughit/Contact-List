@@ -82,15 +82,15 @@
                 <div class="form w-75 pt-3">
                     <!-----Form login------->
                     <h2 class=" border-start border-3 ps-3 mb-5 rounded-1 fw-bold" id="H2_page_login">Login</h2>
-                    <form id="form_login" method="POST">
+                    <form id="form_login" method="POST" onsubmit="return validation_login()">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Username</label>
-                            <input type="text" name="username" class="form-control" id="exampleInputEmail1"
+                            <input type="text" name="username" class="form-control" id="username_login"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                            <input type="password" name="password" class="form-control" id="password_login">
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" name="checkbox" class="form-check-input" id="CheckBox">

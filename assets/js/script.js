@@ -1,9 +1,9 @@
-const username= document.getElementById("Username");
+const username_user= document.getElementById("Username");
 const password_user= document.getElementById("Password");
 const password_verify_user= document.getElementById("Password_verify");
-
+/*--Function validation signup page---*/
 function validation(){
-    if (username.value == "" || username.value == null) {
+    if (username_user.value == "" || username_user.value == null) {
         
         alert("Please fill in Username");
         return false;
@@ -19,24 +19,35 @@ function validation(){
     }else{return true;}
 }
 
-const username_login = document.getElementById("username");
-const password_login = document.getElementById("password");
-
-    function validation_login() {
-        if (username_login == "" || username_login == NULL) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Please fill in Username!',
-            })
-            return false;
-        }
-        if (password_login == "" || password_login == NULL) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Please fill in Password!',
-            })
-            return false;
-        }
+const username_login = document.getElementById("username_login");
+const password_login = document.getElementById("password_login");
+/*--Function validation login page---*/
+function validation_login() {
+    if (username_login == "" || username_login == NULL) {
+        alert("Please fill in Username");
+        return false;
     }
+    else if (password_login.value == "" || password_login.value == NULL) {
+        alert("Please fill in Password");
+        return false;
+    }else{
+        return true;
+    }
+}
+
+const username_contact = document.getElementById("name");
+const email_contact = document.getElementById("email");
+const address_contact = document.getElementById("phone");
+/*--Function validation AddContact page---*/
+function ValidationContact(){
+    if (username_contact.value == "" || username_contact.value == NULL) {
+        alert("Please fill in Username");
+        return false;
+    }else if (email_contact.value == "" || email_contact.value == NULL) {
+        alert("Please fill in Email");
+        return false;
+    }else if (address_contact.value == "" || address_contact.value == NULL) {
+        alert("Please fill in Address");
+        return false;
+    }else return true;
+}
