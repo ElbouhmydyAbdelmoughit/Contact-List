@@ -4,6 +4,7 @@ const password_verify_user= document.getElementById("Password_verify");
 
 function validation(){
     if (username.value == "" || username.value == null) {
+        
         alert("Please fill in Username");
         return false;
     }else if (password_user.value == "" || password_user.value == null) {

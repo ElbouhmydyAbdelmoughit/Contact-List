@@ -22,10 +22,11 @@ class Contact{
          return $res;
     }
 
-    public function update($id){
+    public function update($name,$email,$address,$phone,$id){
 
         $db = Database::Connect();
-        
+        $statement=$db->query("UPDATE contact set name='$name',email='$email',address='$address',phone='$phone' WHERE id='$id'");
+
     }
 
     public  function logout(){

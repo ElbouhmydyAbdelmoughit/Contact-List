@@ -12,7 +12,25 @@
 
         /*-----insert-----*/
         if (isset($_POST['submit'])) {
-            $contact->Add($name,$email,$address,$phone);
+           if($contact->Add($name,$email,$address,$phone)){
+               echo"<script>
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Your account added successfully !',
+                            showConfirmButton: false,
+                            timer: 1800
+                        })
+                    </script>";
+           }else{
+                echo'<script>
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "This Not Added !",
+                        })
+                    </script>';
+           }
         }
         
     }
@@ -119,7 +137,7 @@
         <?php include('Add_contact.php');?>
     </header>
 
-    <script src="assets/js/sweetalert2.js"></script>   
+    <script src="assets/js/sweetalert2.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>

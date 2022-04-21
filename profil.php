@@ -60,7 +60,7 @@
     <header class="my-5">
         <section>
             <h3 class="fw-bold fst-italic" id="title_contact_page">Welcome <span id="span_user" class="badge d-inline" style="background-color: #FF8C32;"><?php echo $_SESSION['username'];?> !</span></h3>
-            <hr class="my-5">
+            <hr>
         </section>
         <section id="info_profil">
             <div class="container w-50 pb-2">
