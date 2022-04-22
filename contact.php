@@ -39,6 +39,11 @@
         $id = $_GET['iddelete'];
         $contact->delete($id,'contact');
     }
+    /*--function update--*/
+    if (!empty($_GET['idupdate'])) {
+        $id=$_GET['idupdate'];
+        $contact->update('idupdate');
+    }
 
 
 ?>
@@ -121,7 +126,7 @@
                                                     <td>'.$row['address'].'</td>
                                                     <td>'.$row['phone'].'</td>
                                                     <td>
-                                                        <a href="contact.php?idupdate='.$row['id'].'" class="btn_edit"><i class="bi bi-pencil text-info btn"></i></a>
+                                                        <a href="EditContact.php?idupdate='.$row['id'].'" class="btn_edit"><i class="bi bi-pencil text-info btn"></i></a>
                                                         <a href="contact.php?iddelete='.$row['id'].'"><i class="bi bi-trash text-info btn"></i></a>
 							                        </td>
 						                        </tr>';

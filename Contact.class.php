@@ -22,11 +22,30 @@ class Contact{
          return $res;
     }
 
-    public function update($name,$email,$address,$phone,$id){
+    public function update($id){
 
         $db = Database::Connect();
-        $statement=$db->query("UPDATE contact set name='$name',email='$email',address='$address',phone='$phone' WHERE id='$id'");
-        
+        /*----Get id Contact and select information of this contact---*/
+        $id=$_GET['idupdate'];
+        $select=$db->query("SELECT * FROM contact WHERE id='$id'");
+        $row = $select->fetch(PDO::FETCH_ASSOC);
+        $id=$row['id'];
+        $name=$row['name'];
+        $email=$row['email'];
+        $address=$row['address'];
+        $phone=$row['phone'];
+        /*---Upadate data of this contact----*/
+        if(isset($_POST['submit'])){
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $address = $_POST['address'];
+            $phone = $_POST['phone'];
+            $statement=$db->query("UPDATE contact set name='$name',email='$email',address='$address',phone='$phone' WHERE id='$id'");
+            if($statement){
+                header('location:contact.php');
+                echo "<script>alert('updated successfully !')</script>";
+            }else{die("This Contact not Updated");}
+        }
 
     }
 

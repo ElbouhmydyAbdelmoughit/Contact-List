@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2">
-    <title>Contact List</title>
+    <title>Edit Contact</title>
 </head>
 
 <body>
@@ -45,30 +45,28 @@
                 <div class="form w-75 pt-3">
                     <!-----Form login------->
                     <h2 class=" border-start border-3 ps-3 mb-5 rounded-1 fw-bold" id="H2_page_login">Login</h2>
-                    <form id="form_login" method="POST" onsubmit="return validation_login()">
+                    <form id="form_login" method="POST" action="contact.php" onsubmit="return ValidationContact()">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Username</label>
-                            <input type="text" name="username" class="form-control" id="username_login"
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" id="email"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" id="password_login">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" name="address" id="address"
+                                aria-describedby="emailHelp">
                         </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" name="checkbox" class="form-check-input" id="CheckBox">
-                            <label class="form-check-label" for="CheckBox">Check me out</label>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" name="phone" class="form-control" id="phone"
+                                aria-describedby="emailHelp">
                         </div>
-                        <button type="submit" name="sub_log" class="btn mb-3"
-                            id="button_login_page_login">Login</button>
-                        <div class="d-flex justify-content-end">
-                            <label class="fst-italic">
-                                Create account
-                                <!----Button Modal---->
-                                <a href="#" type="button" class="btn text-primary pt-0 ps-0" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">Sign up
-                                </a>
-                            </label>
+                        <div class="">
+                            <input type="submit" name="submit" class="btn form-control" id="btn_create" value="Save Edit">
                         </div>
                     </form>
                 </div>

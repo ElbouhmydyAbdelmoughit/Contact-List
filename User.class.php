@@ -9,7 +9,6 @@ class User{
     /*---function insert new user----*/
     public function Insert($username,$password_user,$passwordverify){
         $query="SELECT * FROM user WHERE  username='$username'";
-        echo 'query: '.$query."<br>";
         $db= Database::Connect();
         $result=$db->query($query);
         if ($result->rowCount()>0) {
