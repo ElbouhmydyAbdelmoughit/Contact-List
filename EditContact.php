@@ -48,25 +48,25 @@
                     <form id="form_login" method="POST" action="contact.php" onsubmit="return ValidationContact()">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name="name_edit" id="name" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="name" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email" id="email"
+                            <input type="email" class="form-control" name="email_edit" id="email"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address" id="address"
+                            <input type="text" class="form-control" name="address_edit" id="address"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone</label>
-                            <input type="text" name="phone" class="form-control" id="phone"
+                            <input type="text" name="phone_edit" class="form-control" id="phone"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="">
-                            <input type="submit" name="submit" class="btn form-control" id="btn_create" value="Save Edit">
+                            <input type="submit" name="submit_edit" class="btn form-control" id="btn_create" value="Save Edit">
                         </div>
                     </form>
                 </div>

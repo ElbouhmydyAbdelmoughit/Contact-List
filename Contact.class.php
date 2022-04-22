@@ -35,11 +35,11 @@ class Contact{
         $address=$row['address'];
         $phone=$row['phone'];
         /*---Upadate data of this contact----*/
-        if(isset($_POST['submit'])){
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $address = $_POST['address'];
-            $phone = $_POST['phone'];
+        if(isset($_POST['submit_edit'])){
+            $name = $_POST['name_edit'];
+            $email = $_POST['email_edit'];
+            $address = $_POST['address_edit'];
+            $phone = $_POST['phone_edit'];
             $statement=$db->query("UPDATE contact set name='$name',email='$email',address='$address',phone='$phone' WHERE id='$id'");
             if($statement){
                 header('location:contact.php');
@@ -58,5 +58,5 @@ class Contact{
 }
 
 $contact = new Contact();
-
+$contact->update('idupdate');
 ?>
