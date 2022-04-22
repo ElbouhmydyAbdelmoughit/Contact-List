@@ -8,11 +8,11 @@ class Contact{
     public $phone;
 
 
-    public function Add($name,$email,$address,$phone){
+    public function Add($name,$email,$address,$phone,$idUser){
             $db= Database::Connect();    
             /*verify input if empty or not*/
             if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['address'])) {
-                $db->query("INSERT INTO contact VALUES(NULL,'$name','$email','$address','$phone')");
+                $db->query("INSERT INTO contact(name,email,address,phone,id_user) VALUES('$name','$email','$address','$phone','$idUser')");
             }
     }
 
@@ -26,6 +26,7 @@ class Contact{
 
         $db = Database::Connect();
         $statement=$db->query("UPDATE contact set name='$name',email='$email',address='$address',phone='$phone' WHERE id='$id'");
+        
 
     }
 

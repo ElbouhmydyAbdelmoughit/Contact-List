@@ -8,10 +8,11 @@ class User{
 
     /*---function insert new user----*/
     public function Insert($username,$password_user,$passwordverify){
-        
+        $query="SELECT * FROM user WHERE  username='$username'";
+        echo 'query: '.$query."<br>";
         $db= Database::Connect();
-        $result=$db->query("SELECT * FROM user WHERE  username='$username'");
-        if ($result) {
+        $result=$db->query($query);
+        if ($result->rowCount()>0) {
             echo ("This account allready existe");
         }else{
             if ($password_user == $passwordverify) {

@@ -1,41 +1,3 @@
-<?php
-  require_once('Database.class.php');
-  require_once('User.class.php');
-
-  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-    $name=Database::Checkinput($_POST['username']);
-    $password=Database::Checkinput($_POST['password']);
-    /*-----insert-----*/
-    if (isset($_POST['submit'])) {
-        $passwordverify= Database::Checkinput($_POST['passwordverify']);
-        $insert->Insert($name,$password,$passwordverify);
-    }
-
-  /*-------login------*/
-  if (isset($_POST['sub_log'])) {
-      
-        $db = Database::Connect();
-        $result=$db->query("SELECT * FROM user WHERE password_user='$password' && username ='$name'");
-        $result=$result->fetch();
-        if ($result) {
-            echo 'user found';
-            session_start();
-            $_SESSION['name']=$name;
-            $_SESSION['username']=$result['username'];
-            $_SESSION['data_insert']=$result['data_insert'];
-            $_SESSION['user_id']=$result['id'];
-            header("location:profil.php");
-            if (isset($_POST['Checkbox'])) {
-                setcookie('username',$name,time()+1000*60*2);
-                setcookie('password_user',$password,time()+1000*60);
-            }
-        }
-  }
-}
-  
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +32,7 @@
                 <ul class="navbar-nav ms-auto">
                     <!----navb Button Login-->
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link col-3" id="Home_text">Home</a>
+                        <a href="contact.php" class="nav-link col-3" id="Home_text">Back</a>
                     </li>
                 </ul>
             </div>
@@ -107,14 +69,8 @@
                                     data-bs-target="#exampleModal">Sign up
                                 </a>
                             </label>
-                            <!---Call signup page--->
-
                         </div>
-
                     </form>
-                    <?php 
-                            require "signup.php"; 
-                    ?>
                 </div>
             </div>
         </div>

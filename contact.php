@@ -12,7 +12,7 @@
 
         /*-----insert-----*/
         if (isset($_POST['submit'])) {
-           if($contact->Add($name,$email,$address,$phone)){
+           if($contact->Add($name,$email,$address,$phone,$_SESSION['user_id'])){
                echo"<script>
                         Swal.fire({
                             position: 'top-end',
@@ -111,7 +111,7 @@
                             <tbody>
                                 <?php 
                                     $db=Database::Connect();
-                                    $statemant=$db->query("SELECT * FROM contact");
+                                    $statemant=$db->query("SELECT * FROM contact WHERE id_user=".$_SESSION['user_id']);
                                     if ($statemant) {
                                         foreach ($statemant->fetchAll() as $row ) {
                                             echo'<tr>
@@ -121,7 +121,7 @@
                                                     <td>'.$row['address'].'</td>
                                                     <td>'.$row['phone'].'</td>
                                                     <td>
-                                                        <a href="contact.php?idupdate='.$row['id'].'"><i class="bi bi-pencil text-info btn"></i></a>
+                                                        <a href="contact.php?idupdate='.$row['id'].'" class="btn_edit"><i class="bi bi-pencil text-info btn"></i></a>
                                                         <a href="contact.php?iddelete='.$row['id'].'"><i class="bi bi-trash text-info btn"></i></a>
 							                        </td>
 						                        </tr>';
