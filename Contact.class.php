@@ -58,5 +58,4 @@ class Contact{
 }
 
 $contact = new Contact();
-$contact->update('idupdate');
 ?>
