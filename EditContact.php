@@ -48,7 +48,7 @@
                     <form id="form_login" method="POST" action="contact.php" onsubmit="return ValidationContact()">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="name_edit" id="name" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" value="<?php echo $row['name'];?>" name="name_edit" id="name" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="name" class="form-label">Email</label>
@@ -80,3 +80,13 @@
 </body>
 
 </html>
+
+<?php
+    require('Database.class.php');
+    require('Contact.class.php');
+
+    if (isset($_POST['submit_edit'])) {
+        $contact->select('idupdate');
+        
+    }
+?>
