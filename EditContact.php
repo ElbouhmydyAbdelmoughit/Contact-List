@@ -1,6 +1,5 @@
 <?php
     require('Contact.class.php');
-
     if (!empty($_GET['idupdate'])) {
         /*--Select data of this id--*/
         $id=$_GET['idupdate'];

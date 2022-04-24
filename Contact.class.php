@@ -42,5 +42,4 @@ class Contact{
 }
 
 $contact = new Contact();
-$contact->select(10);
 ?>

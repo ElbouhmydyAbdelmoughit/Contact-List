@@ -18,7 +18,7 @@ class Database{
 
     }
 
-    public function query($requete){
+    public  function query($requete){
         $Query = self::$connection->prepare($requete);
         $Query->execute();
         return $Query;
