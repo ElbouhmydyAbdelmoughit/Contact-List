@@ -1,3 +1,30 @@
+<?php
+    require('Contact.class.php');
+
+    if (!empty($_GET['idupdate'])) {
+        /*--Select data of this id--*/
+        $id=$_GET['idupdate'];
+        $data = $contact->select($id);
+        $id = $data['id'];
+        $name = $data['name'];
+        $email = $data['email'];
+        $address = $data['address'];
+        $phone = $data['phone'];
+    }
+        /*update data of this id*/
+        if (isset($_POST['submit_edit'])) {
+            $id_edit = $_POST['id_edit'];
+            $name_edit = $_POST['name_edit'];
+            $email_edit = $_POST['email_edit'];
+            $address_edit = $_POST['address_edit'];
+            $phone_edit = $_POST['phone_edit'];
+            $sql = $contact->update($id,$name_edit,$email_edit,$address_edit,$phone_edit);
+            if ($sql) {
+                header('location:contact.php');
+            }
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,24 +72,25 @@
                 <div class="form w-75 pt-3">
                     <!-----Form login------->
                     <h2 class=" border-start border-3 ps-3 mb-5 rounded-1 fw-bold" id="H2_page_login">Login</h2>
-                    <form id="form_login" method="POST" action="contact.php" onsubmit="return ValidationContact()">
+                    <form id="form_login" method="POST" onsubmit="return ValidationContact()">
+                        <input type="hidden" name="id_edit" value="<?php echo $id;?>">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" value="<?php echo $row['name'];?>" name="name_edit" id="name" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" value="<?php echo $name;?>" name="name_edit" id="name" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="name" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email_edit" id="email"
+                            <input type="email" class="form-control" value="<?php echo $email;?>" name="email_edit" id="email"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address_edit" id="address"
+                            <input type="text" class="form-control" value="<?php echo $address;?>" name="address_edit" id="address"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone</label>
-                            <input type="text" name="phone_edit" class="form-control" id="phone"
+                            <input type="text" name="phone_edit" value="<?php echo $phone;?>" class="form-control" id="phone"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="">
@@ -78,15 +106,4 @@
     <script src="assets/js/sweetalert2.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
-
-<?php
-    require('Database.class.php');
-    require('Contact.class.php');
-
-    if (isset($_POST['submit_edit'])) {
-        $contact->select('idupdate');
-        
-    }
-?>

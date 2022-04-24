@@ -2,18 +2,16 @@
     require('Session.php');
     require('Database.class.php');
     require('Contact.class.php');
-    
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-        $name=Database::Checkinput($_POST['name']);
-        $email=Database::Checkinput($_POST['email']);
-        $address=Database::Checkinput($_POST['address']);
-        $phone=Database::Checkinput($_POST['phone']);
-
         /*-----insert-----*/
         if (isset($_POST['submit'])) {
-           if($contact->Add($name,$email,$address,$phone,$_SESSION['user_id'])){
-               echo"<script>
+            $name=Database::Checkinput($_POST['name']);
+            $email=Database::Checkinput($_POST['email']);
+            $address=Database::Checkinput($_POST['address']);
+            $phone=Database::Checkinput($_POST['phone']);
+            if($contact->Add($name,$email,$address,$phone,$_SESSION['user_id'])){
+                echo"<script>
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -39,13 +37,6 @@
         $id = $_GET['iddelete'];
         $contact->delete($id,'contact');
     }
-    /*--function update--*/
-    if (!empty($_GET['idupdate'])) {
-        $id=$_GET['idupdate'];
-        $contact->update('idupdate');
-    }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -146,5 +137,4 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
